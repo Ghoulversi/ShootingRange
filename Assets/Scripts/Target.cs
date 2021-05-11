@@ -6,6 +6,7 @@ public class Target : MonoBehaviour
 {
     public Transform[] PositionsToMove;
     public GameObject TargetModel;
+    public DestroyObject DestroyObject;
 
     [Header("Settings")] 
     public float MovementSpeed;
@@ -21,6 +22,12 @@ public class Target : MonoBehaviour
     private void Update()
     {
         MoveTarget();
+    }
+
+    public void GetHit()
+    {
+
+        DestroyObject.DestroyGameObject();
     }
 
     private void MoveTarget()
