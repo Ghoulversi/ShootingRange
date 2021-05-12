@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
         {
             if (hit.transform.CompareTag("Target"))
             {
-                Debug.Log($"Hit: {hit.transform.name}");
                 hit.transform.gameObject.GetComponent<ShootableTarget>().GetHit();
             }    
         }
