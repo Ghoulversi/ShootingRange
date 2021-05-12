@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AntiTarget : Target
+public class AntiTarget : ShootableTarget
 {
-    //Decrease amount of points when get hitted by bullet
+    public float ScorePoint = -1f;
+
+    //Decrease points when get hitted by bullet
     public override void GetHit()
     {
-        Debug.Log("Score -1");
+        Debug.Log($"Score {ScorePoint}");
         base.GetHit();
     }
 }

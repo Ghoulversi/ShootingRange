@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CorrectTarget : Target
+public class CorrectTarget : ShootableTarget
 {
+    public float ScorePoint = 1f;
+
     //Increase points when get hitted by bullet
     public override void GetHit()
     {
-        Debug.Log("Score +1");
+        Debug.Log($"Score {ScorePoint}");
         base.GetHit();
     }
 }

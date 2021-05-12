@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
-    public void DestroyGameObject()
+    //Set destroy gameobject to separate class for future upgrades
+    public void DestroyGameObject(GameObject gameObjectToDestroy)
     {
-        Destroy(gameObject);
+        Destroy(gameObjectToDestroy);
     }
 }
