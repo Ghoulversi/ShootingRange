@@ -37,7 +37,11 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out var hit, MaxDistance))
         {
-            Debug.Log($"Hit: {hit.transform.name}");
+            if (hit.transform.CompareTag("Target"))
+            {
+                Debug.Log($"Hit: {hit.transform.name}");
+                hit.transform.gameObject.GetComponentInParent<Target>().GetHit();
+            }    
         }
 
     }

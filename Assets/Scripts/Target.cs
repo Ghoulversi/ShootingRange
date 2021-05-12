@@ -24,7 +24,7 @@ public class Target : MonoBehaviour
         MoveTarget();
     }
 
-    public void GetHit()
+    public virtual void GetHit()
     {
 
         DestroyObject.DestroyGameObject();
