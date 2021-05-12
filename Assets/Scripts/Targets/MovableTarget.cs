@@ -88,11 +88,11 @@ public class MovableTarget : MonoBehaviour
             case GameMode.Hard:
                 var randomTargets = Random.Range(0, 100);
 
-                if (randomTargets >= 0 && randomTargets <= 40)
+                if (randomTargets >= 0 && randomTargets <= 50)
                 {
                     _currentTargetObj = Instantiate(TargetModel, GetRandomSpawnPos(), Quaternion.identity, transform);
                 }
-                else if (randomTargets >= 41 && randomTargets <= 60)
+                else if (randomTargets >= 51 && randomTargets <= 70)
                 {
                     _currentTargetObj = Instantiate(ObstacleModel, GetRandomSpawnPos(), Quaternion.identity, transform);
                 }
