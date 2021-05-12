@@ -9,6 +9,7 @@ public class GameSceneManager : MonoBehaviour
     public GameSettings GameSettings;
 
     public TextMeshProUGUI TimeRemainingTxt;
+    public TextMeshProUGUI CurrentScoreTxt;
     public float GamePlayTime = 60f;
 
     private float _currentScore = 0f;
@@ -17,31 +18,36 @@ public class GameSceneManager : MonoBehaviour
     private void Start()
     {
         GameEvents.current.onScoreChangeTriggerEvent += OnScoreChanged;
-        Debug.Log($"Current GameMode: {GameSettings.gameMode}");
+
+        CurrentScoreTxt.text = "Score: 0";
+
         StartCoroutine(StartCountdown());
     }
 
+    //Gameplay timer
     private IEnumerator StartCountdown()
     {
         while (GamePlayTime > 0)
         {
-            TimeRemainingTxt.text = $"Time: {Mathf.FloorToInt(GamePlayTime % 60)}";
             yield return new WaitForSeconds(1.0f);
+            TimeRemainingTxt.text = $"Time: {GamePlayTime}";
             GamePlayTime--;
         }
 
         Debug.Log("Game Over");
         TimeRemainingTxt.text = "Time: 0";
+        GameEvents.current.OnFinishGameEvent(_currentScore);
         GamePlayTime = 0;
     }
 
+    //change score and update UI score after hitting a target
     private void OnScoreChanged(float score)
     {
         _currentScore += score;
         if (_currentScore <= 0)
             _currentScore = 0;
 
-        Debug.Log($"Current Score: {_currentScore}");
+        CurrentScoreTxt.text = $"Score: {_currentScore}";
     }
 
     //Load GameScene

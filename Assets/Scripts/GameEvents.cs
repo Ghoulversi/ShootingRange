@@ -18,4 +18,11 @@ public class GameEvents : MonoBehaviour
     {
         onScoreChangeTriggerEvent?.Invoke(score);
     }
+
+    public event Action<float> onFinishGameTriggerEvent;
+
+    public void OnFinishGameEvent(float finalScore)
+    {
+        onFinishGameTriggerEvent?.Invoke(finalScore);
+    }
 }
