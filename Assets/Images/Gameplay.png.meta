@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 8363195733325795470
     second: Score
+  - first:
+      213: -3799501082387455960
+    second: TimerAsset
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -230,7 +233,7 @@ TextureImporter:
         width: 604
         height: 171
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,6 +241,27 @@ TextureImporter:
       bones: []
       spriteID: e8052f7953a001470800000000000000
       internalID: 8363195733325795470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TimerAsset
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 153
+        width: 620
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820659c65e5754bc0800000000000000
+      internalID: -3799501082387455960
       vertices: []
       indices: 
       edges: []

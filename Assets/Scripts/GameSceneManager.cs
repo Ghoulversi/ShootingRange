@@ -20,6 +20,7 @@ public class GameSceneManager : MonoBehaviour
         GameEvents.current.onScoreChangeTriggerEvent += OnScoreChanged;
 
         CurrentScoreTxt.text = "Score: 0";
+        TimeRemainingTxt.text = $"Time: {GamePlayTime}";
 
         StartCoroutine(StartCountdown());
     }

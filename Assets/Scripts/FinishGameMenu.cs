@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class FinishGameMenu : MonoBehaviour
     public GameObject FinishGameUI;
     public LeaderBoard LeaderBoard;
 
+    public TextMeshProUGUI ScoreTxt;
     public GameObject BestScoreTxtObj;
 
     private void Start()
@@ -24,6 +26,7 @@ public class FinishGameMenu : MonoBehaviour
 
     private void FinishGame(float finalScore)
     {
+        ScoreTxt.text = $"Score: {finalScore}";
         LeaderBoard.AddToLeaderBoard(finalScore);
         FinishGameUI.SetActive(true);
         Time.timeScale = 0f;
